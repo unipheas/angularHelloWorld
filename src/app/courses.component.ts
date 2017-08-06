@@ -2,11 +2,19 @@ import { CoursesService } from './courses.service';
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'courses',
+    selector: 'app-courses',
     template: `
-        <button [style.backgroundColor]="isActive ? 'blue' : 'white'">Save</button>
+        <div (click)="onDivClicked()">
+            <button (click)="onSave($event)">Save</button>
+        </div>
     `
 })
 export class CoursesComponent {
-    isActive = true;
+    onDivClicked() {
+        console.log('Div was clicked');
+    }
+    onSave($event) {
+        $event.stopPropagation();
+        console.log('Button was clicked', $event);
+    }
 }
