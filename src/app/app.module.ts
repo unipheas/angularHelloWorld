@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { CourseComponent } from './course/course.component';
 import { AuthorsComponent } from './authors/authors.component';
 import { TextFormatPipe } from './text-format.pipe';
+import { FavoriteComponent } from './favorite/favorite.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { TextFormatPipe } from './text-format.pipe';
     CourseComponent,
     AuthorsComponent,
     SummaryPipe,
-    TextFormatPipe
+    TextFormatPipe,
+    FavoriteComponent
   ],
   imports: [
     BrowserModule,
