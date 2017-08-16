@@ -11,6 +11,7 @@ import { CourseComponent } from './course/course.component';
 import { AuthorsComponent } from './authors/authors.component';
 import { TextFormatPipe } from './text-format.pipe';
 import { FavoriteComponent } from './favorite/favorite.component';
+import { BootstrapPanelComponent } from './bootstrap-panel/bootstrap-panel.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FavoriteComponent } from './favorite/favorite.component';
     AuthorsComponent,
     SummaryPipe,
     TextFormatPipe,
-    FavoriteComponent
+    FavoriteComponent,
+    BootstrapPanelComponent
   ],
   imports: [
     BrowserModule,
