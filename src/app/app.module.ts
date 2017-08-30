@@ -1,3 +1,4 @@
+import { SignupFormComponent } from './signup-form/signup-form.component';
 import { SummaryPipe } from './summary.pipe';
 import { AuthorsService } from './authors/authors.services';
 import { CoursesService } from './courses.service';
@@ -28,7 +29,8 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
     BootstrapPanelComponent,
     LikeComponent,
     InputFormatDirective,
-    ContactFormComponent
+    ContactFormComponent,
+    SignupFormComponent
   ],
   imports: [
     BrowserModule,
