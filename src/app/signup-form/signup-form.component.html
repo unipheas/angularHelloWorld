@@ -6,6 +6,7 @@
             id="username" 
             type="text" 
             class="form-control">
+            <div *ngIf="username.pending">check</div>
     </div>
     <div class="alert alert-danger" 
         *ngIf="username.touched && username.invalid" >
