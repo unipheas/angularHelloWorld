@@ -40,4 +40,13 @@ export class PostsComponent implements OnInit {
       });
     // this.http.patch(this.url, JSON.stringify(post));
   }
+
+  deletePost(post) {
+    this.http.delete(this.url + '/' + post.id)
+      .subscribe(response => {
+        const index = this.posts.indexOf(post);
+        this.posts.splice(index, 1);
+        console.log(response);
+      });
+  }
 }
