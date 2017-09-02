@@ -20,9 +20,6 @@ export class PostsComponent implements OnInit {
       .subscribe(
         response => {
           this.posts = response.json();
-        },
-        error => {
-          console.log(error);
         });
   }
 
@@ -40,7 +37,7 @@ export class PostsComponent implements OnInit {
           if (error instanceof BadInput) {
             // this.form.setErrors(error.originalError);
           } else {
-            console.log(error);
+            throw error;
           }
         });
   }
@@ -50,14 +47,11 @@ export class PostsComponent implements OnInit {
       .subscribe(
         response => {
           console.log(response.json());
-        },
-        error => {
-          console.log(error);
         });
   }
 
   deletePost(post) {
-    this.service.deletePosts(231)
+    this.service.deletePosts(post.id)
       .subscribe(
         response => {
           const index = this.posts.indexOf(post);
@@ -68,7 +62,7 @@ export class PostsComponent implements OnInit {
           if (error instanceof NotFoundError) {
             console.log('This post has already been deleted');
           } else {
-            console.log(error);
+            throw error;
           }
         });
   }
