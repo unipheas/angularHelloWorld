@@ -1,15 +1,15 @@
 import { FormGroup, FormArray, FormControl, FormBuilder, Validators } from '@angular/forms';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-new-course-form',
+  selector: 'new-course-form',
   templateUrl: './new-course-form.component.html',
   styleUrls: ['./new-course-form.component.css']
 })
-export class NewCourseFormComponent implements OnInit {
+export class NewCourseFormComponent {
   form;
 
-  constructor(fb: FormBuilder) {
+  constructor(fb: FormBuilder){
     this.form = fb.group({
       name: ['', Validators.required],
       contact: fb.group({
@@ -18,8 +18,5 @@ export class NewCourseFormComponent implements OnInit {
       }),
       topics: fb.array([])
     });
-   }
-
-  ngOnInit() {
   }
 }

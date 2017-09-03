@@ -7,8 +7,10 @@ describe('hello-world App', () => {
     page = new HelloWorldPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display welcome message', done => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!');
+    page.getParagraphText()
+      .then(msg => expect(msg).toEqual('Welcome to app!!'))
+      .then(done, done.fail);
   });
 });

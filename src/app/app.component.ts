@@ -1,4 +1,3 @@
-import { FavoriteChangedEventArgs } from './favorite/favorite.component';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,8 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  task = {
-    title: 'Review applications',
-    assignee: null
+  tweet = { 
+    body: '...',
+    likesCount: 10,
+    isLiked: true
   }
 }

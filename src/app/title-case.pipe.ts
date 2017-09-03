@@ -1,23 +1,20 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'textFormat'
+  name: 'titleCase'
 })
-export class TextFormatPipe implements PipeTransform {
+export class TitleCasePipe implements PipeTransform {
 
   transform(value: string): any {
-    if (!value) {
-      return null;
-    }
+    if (!value) return null;
 
-    const words = value.split(' ');
-    for (let i = 0; i < words.length; i++) {
-      const word = words[i];
-      if (i > 0 && this.isPreposition(word)) {
+    let words = value.split(' ');
+    for (var i = 0; i < words.length; i++) {
+      let word = words[i];
+      if (i > 0 && this.isPreposition(word))
         words[i] = word.toLowerCase();
-      } else {
+      else 
         words[i] = this.toTitleCase(word);
-      }
     }
 
     return words.join(' ');
@@ -28,7 +25,7 @@ export class TextFormatPipe implements PipeTransform {
   }
 
   private isPreposition(word: string): boolean {
-    const prepositions = [
+    let prepositions = [
       'of',
       'the'
     ];
