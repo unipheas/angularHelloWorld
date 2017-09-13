@@ -10,6 +10,8 @@ export class GithubProfileComponent implements OnInit {
 
   constructor(private router: Router) { }
 
+  ngOnInit () {}
+
   submit() {
     this.router.navigate(['/followers'], {
       queryParams: {page: 1, order: 'newest'}
